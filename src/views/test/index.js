@@ -8,26 +8,37 @@ export default class extends React.Component {
     index: 0
   }
 
-  next = () => {
+  change = direction => () => {
     this.setState(state => ({
-      index: ++state.index % Questions.length
+      index: Math.max(Math.min(state.index + direction, Questions.length - 1), 0)
     }))
   }
 
+  finnish = () => {
+
+  }
+
   render() {
-    const question = Questions[this.state.index]
+    const {index} = this.state
+    const question = Questions[index]
     return (
       <div>
-        <h2>Test</h2>
         <h3>Question: { question.text }</h3>
+        <div key={index}>
         { question.answers.map((a, i) => (
           <div key={i}>
-            <input type="checkbox" id={i} />
-            <label htmlFor={i}>{a}</label>
+            <input type="checkbox" id={`${index}-${i}`} />
+            <label htmlFor={`${index}-${i}`}>{a}</label>
           </div>
         )) }
+        </div>
 
-        <button onClick={this.next}>Next</button>
+        <button onClick={this.change(-1)}>Previous</button>
+        { index >= Questions.length - 1 ? (
+          <button onClick={this.finnish}>Finnish</button>
+        ) : (
+          <button onClick={this.change(1)}>Next</button>
+        )}
       </div>
     )
   }
