@@ -5,6 +5,8 @@ import HomeIndex from './home'
 import AboutIndex from './about'
 import TestIndex from './test'
 
+import Header from './shared/header'
+
 const PageNotFound = () => (
   <div>
     <h2>Page Not Found.</h2>
@@ -16,12 +18,8 @@ export default class extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <main>
-          <h1>Theory Practice Online</h1>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-          </ul>
+        <main className="wrapper">
+          <Header />
           <Switch>
             <Route path='/' exact component={HomeIndex} />
             <Route path='/about' component={AboutIndex} />

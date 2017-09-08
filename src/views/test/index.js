@@ -1,6 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-
 import Questions from './questions'
 
 export default class extends React.Component {
