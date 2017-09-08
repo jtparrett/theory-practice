@@ -20,8 +20,8 @@ export default class extends React.Component {
     const {index} = this.state
     const question = Questions[index]
     return (
-      <div>
-        <h3>Question: { question.text }</h3>
+      <section className="section">
+        <h3 className="section__copy">Question: { question.text }</h3>
         <div key={index}>
         { question.answers.map((a, i) => (
           <div key={i}>
@@ -37,7 +37,7 @@ export default class extends React.Component {
         ) : (
           <button onClick={this.change(1)}>Next</button>
         )}
-      </div>
+      </section>
     )
   }
 }

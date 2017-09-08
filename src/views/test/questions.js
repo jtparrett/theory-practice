@@ -17,4 +17,14 @@ export default [{
     "will tow a broken down vehicle and it's passengers home",
     'are able to stop and direct anyone on a motorway'
   ]
+},{
+  text: 'You think the driver of the vehicle in front has forgotten to cancel their right indicator. You should',
+  correct: [3],
+  answers: [
+    'flash your lights to alert the driver',
+    'sound your horn before overtaking',
+    'overtake on the left if there is room',
+    'stay behind and not overtake'
+  ]
 }]
+

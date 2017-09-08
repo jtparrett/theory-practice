@@ -4,11 +4,10 @@ import {Link} from 'react-router-dom'
 export default class extends React.Component {
   render() {
     return (
-      <div>
-        <h2>About</h2>
-        <p>This is a website to practice the multiple choice part of your theory driving test.</p>
+      <section className="section">
+        <p className="section__copy">This is a website to practice the multiple choice part of your theory driving test.</p>
         <Link to="/test">Take the test</Link>
-      </div>
+      </section>
     )
   }
 }
